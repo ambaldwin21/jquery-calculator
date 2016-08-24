@@ -2,41 +2,15 @@ $(document).ready(function() {
 
   var screen = document.querySelector("#screen");
   var container = document.querySelector("#buttons-container");
-  var buttons = document.querySelector(".buttons");
 
-//all the variables
-  var clear = $("#clear");
-  var seven = $("span.seven");
-  var eight = $(".eight");
-  var nine = $(".nine");
-  var four = $(".four");
-  var five = $(".five");
-  var six = $(".six");
-  var one = $(".one");
-  var two = $(".two");
-  var three = $(".three");
-  var zero = $("#zero");
-
-  var divide = $("div span:nth-child(2)");
-  var multiply = $("div span:nth-child(3)");
-  var subtract = $("div span:nth-child(7)");
-  var add = $("div span:nth-child(11)");
-  var equals = $("#equals");
 
   //numbers and operators append to screen
-  $(divide).click(function() {
+  $(".digit").click(function() {
     $(screen).append($(this).text());
+    // console.log("a click happened from a number");
   });
 
-  $(multiply).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(subtract).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(add).click(function() {
+  $(".operator").click(function () {
     $(screen).append($(this).text());
   });
 
@@ -44,51 +18,11 @@ $(document).ready(function() {
     location.reload();
   });
 
-  $(seven).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(eight).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(nine).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(four).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(five).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(six).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(one).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(two).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(three).click(function() {
-    $(screen).append($(this).text());
-  });
-
-  $(zero).click(function() {
-    $(screen).append($(this).text());
-  });
 
   //arithmetic
-  var equation;
 
   $(equals).click(function() {
-    equation = $(screen).text();
+    var equation = $(screen).text();
 
     var operatorMultiply = equation.indexOf('x');
     var operatorSubtract = equation.indexOf('-');
